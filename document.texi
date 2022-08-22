@@ -58,6 +58,4 @@ This manual is for program, version version.
 
 
 
-
-
 @bye
