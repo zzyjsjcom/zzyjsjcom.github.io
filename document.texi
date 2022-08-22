@@ -50,6 +50,7 @@ This manual is for program, version version.
 @b{Document}
 @example
 @url{./document/index.html, document}
+@url{./cs_dev/index.html, computer development}
 @end example
 
 
