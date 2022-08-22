@@ -1,0 +1,92 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle android overview
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top android overview
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* android overview::
+@c * Copying::  free time team
+@end menu
+
+@node android overview
+@chapter android overview
+
+@b{Preloader 启动过程，原理，做了什么东西，目的}
+
+@b{Bootloader 启动过程，原理，做了什么东西，目的}
+
+@b{Kernel的启动流程}
+
+@b{Android的启动流程}
+
+@b{Makefile}
+
+@b{Ramconsole原理}
+
+@b{Cmdline原理}
+
+@b{Init.rc的工作原理}
+
+@b{内存管理机制}
+
+@b{进程调度}
+
+@b{Android log 机制}
+
+@b{Logd/logcat}
+
+@b{Ramdump机制}
+
+@b{Watchdog 机制}
+
+@b{信号处理}
+
+@b{Reboot reason的实现以及意义，用途}
+
+@b{Bugreport机制}
+
+@b{Device tree机制}
+
+@b{Android启动流程}
+
+
+
+
+@bye

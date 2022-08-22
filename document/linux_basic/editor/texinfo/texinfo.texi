@@ -1,0 +1,176 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle texinfo
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top texinfo
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* learning materials for texinfo::
+* template::
+* often used command for texinfo::
+@c * Copying:: free time team
+@end menu
+
+@node learning materials for texinfo
+@chapter learning materials for texinfo
+@itemize @bullet
+@item
+@b{Reference} @url{http://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html, texinfo document}
+@end itemize
+
+@node template
+@chapter template
+
+@itemize
+@item
+@b{template}
+
+texinfo source example => @url{./template.texi, template}
+
+html example => @url{./template.html, template html}
+
+@end itemize
+
+@itemize
+@item
+@b{texinfo to html}
+@end itemize
+
+@example
+makeinfo --html --no-split template.texi
+@end example
+
+@itemize
+@item
+@b{change title}
+
+拿到模板后先修改 @@settitle 和 @@top 后面的 "todo"， 改成自己的title。
+
+@end itemize
+
+@itemize
+@item
+@b{添加一级菜单}
+
+参考上面的模板，在 @@menu 和 @@end menu 的中间加入菜单的名字。
+
+在 @@end menu 的后面加上 @@node 和 @@chapter, 每一个一级菜单都需要一个成对的 node/chapter.
+
+类似的，二级菜单是: node/section, 三级菜单是: node/subsection.
+
+可以在 node/chapter 的后面输入正文了。
+
+@end itemize
+
+@itemize
+@item
+@b{more}
+
+更多的常见语法规则，可以参考下面一章的介绍。
+
+texinfo 手册参考: @url{http://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html, http://www.gnu.org/software/texinfo/manual/texinfo/texinfo.html}
+
+@end itemize
+
+
+
+
+@node often used command for texinfo
+@chapter often used command for texinfo
+
+@itemize @bullet
+@item
+@b{comment}
+@end itemize
+
+@example
+@@c this is comment
+@end example
+
+@itemize @bullet
+@item
+@b{box}
+@end itemize
+
+@example
+@@cartouche
+@@example
+text @@c box example
+@@end example
+@@end cartouche
+@end example
+
+@itemize @bullet
+@item
+@b{bold}
+@end itemize
+
+@example
+@@b@{text@}
+@end example
+
+@itemize @bullet
+@item
+@b{url}
+@end itemize
+
+@example
+@@url@{url link, text@}
+@end example
+
+@itemize @bullet
+@item
+@b{item}
+@end itemize
+
+@example
+@@itemize @@bullet
+@@item
+item test
+@@end itemize
+@end example
+
+
+
+
+
+
+
+
+@bye

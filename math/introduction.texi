@@ -1,0 +1,86 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle 微信群规范及其相关事宜
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top 微信群规范及其相关事宜
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* 简介::
+* 相关网站::
+* 微信群规范::
+@end menu
+
+@node 简介
+@chapter 简介
+
+您可以通过下面的方法加入我们，
+
+QQ群： 479198558， 群文件 => 00_数学
+
+@node 相关网站
+@chapter 相关网站
+
+leetcode => 偏计算机基础
+
+projecturler => 数学
+
+@url{https://www.khanacademy.org/}  => 可汗学院 en
+
+@url{https://zh.khanacademy.org/} => 可汗学院 cn
+
+@url{https://revisionmaths.com/} => Revision Maths
+
+@node 微信群规范
+@chapter 微信群规范
+
+禁止发广告 =>  无警告移出。
+
+禁止发数学无关的静态、动态图片 => 无警告移出。
+
+禁止发表情包，可以容忍微信传统表情。
+
+不鼓励讨论数学无关问题，不鼓励讨论职业生涯问题，不鼓励图形学、机器学习、区块链等话题。
+
+多讨论具体的数学思路，具体的题目。
+
+
+
+
+
+@bye

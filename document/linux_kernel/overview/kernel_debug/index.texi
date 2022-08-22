@@ -1,0 +1,66 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle Kernel debug
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top Kernel debug
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* Kernel debug::
+@c * Copying::  free time team
+@end menu
+
+@node Kernel debug
+@chapter Kernel debug
+
+@c todo list
+@c // debug kernel macro
+@c http://www.alivepea.me/kernel/gdb-macro/
+
+@c // backtrace
+@c http://www.alivepea.me/prog/how-backtrace-work/
+
+===> @url{kernel_startup_code_online_debug.html, kernel startup code online debug}
+
+===> @url{start_kernel.html, start_kernel debug}
+
+
+
+
+
+@bye

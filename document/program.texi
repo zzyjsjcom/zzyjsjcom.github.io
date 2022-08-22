@@ -1,0 +1,83 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle Program
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by 
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top Program
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* Index::
+@c * Copying::  free time team
+@end menu
+
+@node Index
+@chapter Index
+
+@itemize @bullet
+@item @b{ARM} @url{program/arm.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{Python} @url{program/python.html, view}
+@end itemize
+
+@itemize @bullet
+@item @b{Matlab} @url{program/matlab.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{Java} @url{program/java.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{Android} @url{program/android.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{Linux} @url{program/linux.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{C/CPP} @url{program/c_cpp.html,view}
+@end itemize
+
+@itemize @bullet
+@item @b{R Language} @url{program/r_language.html,view}
+@end itemize
+
+@bye

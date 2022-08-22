@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for Document, version 1.0.
+
+Copyright (C) years free time team.
+
+Permission is granted to -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>Linux kernel patch by wenjia_zhou</title>
+
+<meta name="description" content="Linux kernel patch by wenjia_zhou">
+<meta name="keywords" content="Linux kernel patch by wenjia_zhou">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#Top" rel="start" title="Top">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">Linux kernel patch by wenjia_zhou</h1>
+
+
+
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a name="toc-Intel_005fi915_005fgpu-1" href="#Intel_005fi915_005fgpu">1 Intel_i915_gpu</a></li>
+</ul>
+</div>
+
+
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="#Intel_005fi915_005fgpu" accesskey="n" rel="next">Intel_i915_gpu</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="Linux-kernel-patch-by-wenjia_005fzhou"></a>
+<h1 class="top">Linux kernel patch by wenjia_zhou</h1>
+
+<p>This manual is for program, version version.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Intel_005fi915_005fgpu" accesskey="1">Intel_i915_gpu</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="Intel_005fi915_005fgpu"></a>
+<div class="header">
+<p>
+Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="Intel_005fi915_005fgpu-1"></a>
+<h2 class="chapter">1 Intel_i915_gpu</h2>
+
+<p><b>Fix a memory leak in intel_gvt_init_gtt</b>
+</p><div class="example">
+<pre class="example">Intel develop tree: https://github.com/01org/gvt-linux.git
+
+commit 4c47ec60defb22fe5db110b8390c74353c85b4e6
+Author: Zhou, Wenjia &lt;zhiyuan_zhu@htc.com&gt;
+Date:   Tue Jul 4 15:47:00 2017 +0800
+
+    drm/i915/gvt: Fix a memory leak in intel_gvt_init_gtt()
+
+    It will causes memory leak, if the function setup_spt_oos() fail,
+    in the function intel_gvt_init_gtt(),
+    which allocated by get_zeroed_page() and mapped by dma_map_page().
+
+    Unmap and free the page,  after STP oos initialize fail,
+    it will fix this issue.
+
+    Signed-off-by: Zhou, Wenjia &lt;zhiyuan_zhu@htc.com&gt;
+    Signed-off-by: Zhenyu Wang &lt;zhenyuw@linux.intel.com&gt;
+</pre></div>
+
+
+
+
+
+<hr>
+
+
+
+</body>
+</html>

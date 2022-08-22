@@ -1,0 +1,115 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle Document
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top Document
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* Introduction::  first chapter
+* Main index:: second chapter
+@c * Copying::  free time team
+@end menu
+
+@node Introduction
+@chapter Introduction
+
+@node Main index
+@chapter Main index
+
+@itemize
+@item
+@b{Ubuntu study} @url{ubuntu_study/index.html,view}
+@end itemize
+
+@itemize
+@item
+@b{Linux basic} @url{linux_basic/index.html,view}
+@end itemize
+
+@itemize
+@item
+@b{Linux Kernel} @url{linux_kernel/index.html,view}
+@end itemize
+
+@itemize
+@item
+@b{Essential tools} @url{essential_tools.html, view}
+@end itemize
+
+@itemize
+@item
+@b{System development} @url{system_dev/index.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Program} @url{program.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Open source} @url{open_source.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Computer vision} @url{computer_vision.html, view}
+@end itemize
+
+@itemize
+@item
+@b{CPU} @url{cpu.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Security} @url{./security/index.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Android} @url{./android/index.html, view}
+@end itemize
+
+@itemize
+@item
+@b{Container} @url{./container/index.html, view}
+@end itemize
+
+@bye

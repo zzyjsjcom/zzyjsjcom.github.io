@@ -1,0 +1,134 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle linux kernel maintainer 虎牙直播
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top linux kernel maintainer 虎牙直播
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* linux kernel maintainer 虎牙直播::
+@c * Copying::  free time team
+@end menu
+
+@node linux kernel maintainer 虎牙直播
+@chapter linux kernel maintainer 虎牙直播
+
+@b{作者: zhi.a.wang@@intel.com}
+
+@b{整理: 周文嘉}
+
+@menu
+* Abstract::
+* Description::
+* App tutoiral::
+* Related topic::
+* GVT-g ::
+@c * Copying::  free time team
+@end menu
+
+@node Abstract
+@section Abstract
+
+@b{Date: About }, 16:00, 8/6 2017, Sunday。
+
+@b{本次直播已结束，谢谢关注。}
+
+@b{希望参与或者持续关注此项目，请移步: } @url{https://free-time-team.github.io/nav/new_cn.html#Intel-GVT-G-project, Intel GVT-g project}
+
+@b{Address:} @url{http://www.huya.com/1272134181?platform=2&from=wx&source=android&fromyy=2094749164, 王叔叔直播间}
+
+@b{Content:} How to commit your first linux kernel patch
+
+@node Description
+@section Description
+
+近期将会有 Intel 工程师， linux kernel GVT-g 作者， 以个人名义，在YY平台做一个直播。
+
+和广大工程师一起做技术交流，内容会涵盖如何向 GVT-g 提交patch。
+渴望对linux kenrel做贡献的同学，可以关注直播时间。
+
+Ft2 team 将会把这些内容作为一个topic，整理、讨论，并且不定期在网站update。
+
+@node App tutoiral
+@section App tutoiral
+
+以下是针对手机并且需要下载app的朋友的一个简单入门教程。
+以下步骤，都是在手机上操作。
+
+@b{==> 1.} 打开王叔叔直播空间页面: http://m.huya.com/1873077328
+
+  记住王叔叔直播间的网名 "隔壁王叔叔" 以及左边的 Icon 图标，后面会用到。
+
+  点击右下角的 “打开APP”, 将会开始下载“虎牙直播” APP。
+
+@b{==> 2.} App安装完成打开后，注册帐号。
+
+@b{==> 3.} 从搜索栏搜索 "隔壁王叔叔"， 打开你刚才记住的那个用户，点击“订阅”
+
+@b{==> 4.}  此后从 “我的” -> “我的订阅” 将会看到隔壁王叔叔了。
+
+最后的效果图，如下。
+
+@image{./00resource/YY_Picture, jpg}
+
+@node Related topic
+@section Related topic
+
+@b{宋老师作品}
+@url{https://mp.weixin.qq.com/s/vvGsn8zN0aLO27D71y3a6g, 怎么给Linux mainline发patch}
+
+@b{A patch example:}
+@url{https://free-time-team.github.io/document/linux_kernel/overview/kernel_dev/linux_dev_affairs.html, example}
+
+@node GVT-g
+@section GVT-g
+
+@b{Ubuntu16.10:}
+@url{Ubuntu16.10: http://old-releases.ubuntu.com/releases/16.10/, ubuntu 16.10 download address}
+
+@b{GVT-g document}
+
+@url{https://01.org/zh/node/9145, HOW TO CONTRIBUTE TO GVT-G PROJECT}
+
+@url{https://01.org/zh/node/9140, GVT-G NEW ARCHITECTURE INTRODUCTION--UPDATE}
+
+@b{GVTg Setup Guide}
+
+https://github.com/01org/gvt-linux/wiki/GVTg_Setup_Guide
+
+@bye

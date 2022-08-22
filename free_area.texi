@@ -1,0 +1,83 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle Free Area
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top Free Area
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* Free Area::
+* Community Contributions::
+* Project::
+* Research field::
+* Document::
+@c * Copying::  free time team
+@end menu
+
+@node Free Area
+@chapter Free Area
+
+This is Free-time team's heart area.
+
+@node Community Contributions
+@chapter Community Contributions
+
+Community Contributions page: @url{https://free-time-team.github.io/community_contributions.html, Community Contributions}
+
+@node Project
+@chapter Project
+
+Free-time team's projects: @url{https://free-time-team.github.io/project.html, Projects}
+
+@node Research field
+@chapter Research field
+
+Free-time team's research field: @url{https://free-time-team.github.io/research_field.html, Research filed}
+
+@node Document
+@chapter Document
+
+Document bank: @url{https://free-time-team.github.io/document.html, Document}
+
+
+
+
+
+
+
+@bye

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for Document, version 1.0.
+
+Copyright (C) years free time team.
+
+Permission is granted to -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>arm32 embedded environment</title>
+
+<meta name="description" content="arm32 embedded environment">
+<meta name="keywords" content="arm32 embedded environment">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#Top" rel="start" title="Top">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">arm32 embedded environment</h1>
+
+
+
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a name="toc-arm32-embedded-environment-2" href="#arm32-embedded-environment">1 arm32 embedded environment</a></li>
+</ul>
+</div>
+
+
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="#arm32-embedded-environment" accesskey="n" rel="next">arm32 embedded environment</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="arm32-embedded-environment-1"></a>
+<h1 class="top">arm32 embedded environment</h1>
+
+<p>This manual is for program, version version.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#arm32-embedded-environment" accesskey="1">arm32 embedded environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="arm32-embedded-environment"></a>
+<div class="header">
+<p>
+Previous: <a href="#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<a name="arm32-embedded-environment-2"></a>
+<h2 class="chapter">1 arm32 embedded environment</h2>
+
+<ul>
+<li> <b>install qemu</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">sudo apt-get install qemu
+</pre></div>
+
+<ul>
+<li> <b>install toolchain</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">sudo apt-get insatll gcc-arm-linux-gnueabi
+sudo apt-get install libc6-dev-armel-cross
+</pre></div>
+
+<ul>
+<li> <b>get code</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">git clone https://github.com/sys-build/embedded_env_arm32.git
+</pre></div>
+
+<ul>
+<li> <b>build</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">arm-linux-gnueabi-as -o test.o test.s
+arm-linux-gnueabi-ld -Ttext=0x0 -o test.elf test.o
+arm-linux-gnueabi-nm test.elf
+arm-linux-gnueabi-objcopy -O binary test.elf test.bin
+dd if=/dev/zero of=flash.bin bs=4096 count=4096
+dd if=test.bin of=flash.bin bs=4096 conv=notrunc
+</pre></div>
+
+<ul>
+<li> <b>run in qemu</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">qemu-system-arm -M connex -pflash flash.bin -nographic -serial /dev/null
+</pre></div>
+
+<ul>
+<li> <b>qemu commands</b>
+</li></ul>
+
+<div class="example">
+<pre class="example">help // help info
+info registers // review registers
+quit // quit
+xp /fmt address // dump memory
+system_reset // reset
+</pre></div>
+
+
+
+
+
+
+<hr>
+
+
+
+</body>
+</html>

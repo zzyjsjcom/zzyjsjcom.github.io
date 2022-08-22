@@ -1,0 +1,94 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle os diy
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top os diy
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* os diy::
+@c * Copying::  free time team
+@end menu
+
+@node os diy
+@chapter os diy
+
+@itemize
+@item
+@b{install tools}
+@end itemize
+
+@example
+sudo apt-get install qemu sudo apt-get install nasm
+@end example
+
+@itemize
+@item
+@b{get code}
+@end itemize
+
+@example
+git clone https://github.com/sys-build/os_diy.git
+@end example
+
+@itemize
+@item
+@b{compiler and run}
+@end itemize
+
+@example
+cd os_diy/01_30days/day01/hello2
+make
+qemu-system-i386 os.img
+@end example
+
+@itemize
+@item
+@b{clean}
+@end itemize
+
+@example
+Ctrl+C to exit
+make clean
+@end example
+
+
+
+
+
+@bye
