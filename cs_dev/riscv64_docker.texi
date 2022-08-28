@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle title
+@settitle RISCV64 Env
 
 @copying
 This manual is for Document, version 1.0.
@@ -42,14 +42,40 @@ This manual is for program, version version.
 
 @menu
 * Docker Usage Introduction::
+* Get and Run RISCV64 Docker::
 @c * Copying::  free time team
 @end menu
 
 @node Docker Usage Introduction
 @chapter Docker Usage Introduction
 以下几篇文章可以作为 Docker 的通用入门文章
+@example
 https://www.runoob.com/docker/ubuntu-docker-install.html
 https://www.runoob.com/docker/docker-image-usage.html
+@end example
 
+@node Get and Run RISCV64 Docker
+@chapter Get and Run RISCV64 Docker
+
+使用以下两条命令，你就可以在x86 ubuntu的环境中搭建起一个riscv64的学习环境了。 
+@example
+sudo docker pull ft2team/riscv64_u2004
+sudo docker run --rm -v /mnt:~ -it ft2team/riscv64_u2004
+@end example
+
+RISCV64 基础环境如下:
+@example
+zzy@@0010ef5413da:~$ uname -a
+Linux 0010ef5413da 5.15.0-46-generic #49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 UTC 2022 riscv64 riscv64 riscv64 GNU/Linux
+
+zzy@@0010ef5413da:~$ gcc -v
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/riscv64-linux-gnu/9/lto-wrapper
+Target: riscv64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.1' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=riscv64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libitm --disable-libsanitizer --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --disable-multilib --with-arch=rv64imafdc --with-abi=lp64d --enable-checking=release --build=riscv64-linux-gnu --host=riscv64-linux-gnu --target=riscv64-linux-gnu
+Thread model: posix
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+@end example
 
 @bye

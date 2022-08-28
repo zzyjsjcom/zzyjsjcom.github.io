@@ -119,7 +119,7 @@ https://www.runoob.com/docker/docker-image-usage.html
 
 <p>使用以下两条命令，你就可以在x86 ubuntu的环境中搭建起一个arm64的学习环境了。
 </p><table><tr><td>&nbsp;</td><td><pre class="example">sudo docker pull ft2team/arm64_u20.04:sve
-sudo docker run --rm -v /mnt:~ -it ft2team/arm64_u20.04:sve
+sudo docker run --rm -v ~/:/mnt -it ft2team/arm64_u20.04:sve
 </pre></td></tr></table>
 
 
