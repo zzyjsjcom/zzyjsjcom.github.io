@@ -63,7 +63,9 @@ ul.toc {list-style: none}
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Docker-Usage-Introduction">1. Docker Usage Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top"><a href="#ARM64-code-sample">2. ARM64 code sample</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top"><a href="#Get-and-Run-ARM64-Docker">2. Get and Run ARM64 Docker</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#ARM64-code-sample">3. ARM64 code sample</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
@@ -72,11 +74,11 @@ ul.toc {list-style: none}
 <a name="Docker-Usage-Introduction"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#ARM64-code-sample" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Get-and-Run-ARM64-Docker" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[<a href="#ARM64-code-sample" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Get-and-Run-ARM64-Docker" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -95,12 +97,39 @@ https://www.runoob.com/docker/docker-image-usage.html
 
 
 <hr size="6">
-<a name="ARM64-code-sample"></a>
+<a name="Get-and-Run-ARM64-Docker"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Docker-Usage-Introduction" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left">[<a href="#ARM64-code-sample" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#Docker-Usage-Introduction" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#ARM64-code-sample" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Get-and-Run-ARM64-Docker-1"></a>
+<h1 class="chapter">2. Get and Run ARM64 Docker</h1>
+
+<p>使用以下两条命令，你就可以在x86 ubuntu的环境中搭建起一个arm64的学习环境了。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">sudo docker pull ft2team/arm64_u20.04:sve
+sudo docker run --rm -v /mnt:~ -it ft2team/arm64_u20.04:sve
+</pre></td></tr></table>
+
+
+<hr size="6">
+<a name="ARM64-code-sample"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Get-and-Run-ARM64-Docker" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Get-and-Run-ARM64-Docker" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[ &gt;&gt; ]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -113,7 +142,7 @@ https://www.runoob.com/docker/docker-image-usage.html
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
 <a name="ARM64-code-sample-1"></a>
-<h1 class="chapter">2. ARM64 code sample</h1>
+<h1 class="chapter">3. ARM64 code sample</h1>
 
 <p><b>AARCH64 基本汇编程序</b>
 </p>
@@ -154,7 +183,7 @@ rm -f hello *.o
 </pre></td></tr></table>
 
 
-<p>AARCH64 Neon 编译运行
+<p><b>AARCH64 Neon指令</b>
 </p>
 <p>Neon 的测试代码在目录 ~/aarch64_sample/neon 下面。
 AARCH64 Neon 汇编编译运行
@@ -174,7 +203,7 @@ rm -f *.o neon_add3 neon_hello
 </pre></td></tr></table>
 
 
-<p>AARCH64 Neon intrinsics 编译运行
+<p><b>AARCH64 Neon intrinsics</b>
 </p>
 <p>这是一个用neon计算 1,2,3 ... 加到99 的例子，运行 make run_intrinsics clean 结果如下
 </p>
@@ -187,7 +216,7 @@ rm -f *.o neon_add3 neon_hello
 </pre></td></tr></table>
 
 
-<p>AARCH64 SVE 编译运行
+<p><b>AARCH64 SVE</b>
 </p>
 <p>SVE 的测试代码在目录 ~/work/sve 下面。
 AARCH64 SVE 汇编编译运行
@@ -206,9 +235,6 @@ rm -f *.o sve_strlen sve_hello
 </pre></td></tr></table>
 
 
-<p>因为这个例子的代码量比较少，因此贴出 source code 的源代码，更多内容，
-见参考文献 [6]
-</p>
 <table><tr><td>&nbsp;</td><td><pre class="example">$ cat sve_strlen.S
 // reference: https://alastairreid.github.io/papers/sve-ieee-micro-2017.pdf
         .arch armv8.2-a+sve
@@ -269,7 +295,8 @@ rm -f *.o sve_strlen sve_hello
 
 <ul class="toc">
   <li><a name="toc-Docker-Usage-Introduction-1" href="#Docker-Usage-Introduction">1. Docker Usage Introduction</a></li>
-  <li><a name="toc-ARM64-code-sample-1" href="#ARM64-code-sample">2. ARM64 code sample</a></li>
+  <li><a name="toc-Get-and-Run-ARM64-Docker-1" href="#Get-and-Run-ARM64-Docker">2. Get and Run ARM64 Docker</a></li>
+  <li><a name="toc-ARM64-code-sample-1" href="#ARM64-code-sample">3. ARM64 code sample</a></li>
 </ul>
 </div>
 <hr size="1">

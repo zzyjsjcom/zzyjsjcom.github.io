@@ -42,6 +42,7 @@ This manual is for program, version version.
 
 @menu
 * Docker Usage Introduction::
+* Get and Run ARM64 Docker::
 * ARM64 code sample::
 @c * Copying::  free time team
 @end menu
@@ -52,6 +53,15 @@ This manual is for program, version version.
 @example
 https://www.runoob.com/docker/ubuntu-docker-install.html
 https://www.runoob.com/docker/docker-image-usage.html
+@end example
+
+@node Get and Run ARM64 Docker
+@chapter Get and Run ARM64 Docker
+
+使用以下两条命令，你就可以在x86 ubuntu的环境中搭建起一个arm64的学习环境了。
+@example
+sudo docker pull ft2team/arm64_u20.04:sve
+sudo docker run --rm -v /mnt:~ -it ft2team/arm64_u20.04:sve
 @end example
 
 @node ARM64 code sample
@@ -96,7 +106,7 @@ hello aarch64
 rm -f hello *.o
 @end example
 
-AARCH64 Neon 编译运行
+@b{AARCH64 Neon指令}
 
 Neon 的测试代码在目录 ~/aarch64_sample/neon 下面。
 AARCH64 Neon 汇编编译运行
@@ -116,7 +126,7 @@ name: data (new)
 rm -f *.o neon_add3 neon_hello
 @end example
 
-AARCH64 Neon intrinsics 编译运行
+@b{AARCH64 Neon intrinsics}
 
 这是一个用neon计算 1,2,3 ... 加到99 的例子，运行 make run_intrinsics clean 结果如下
 
@@ -129,7 +139,7 @@ sum=4950
 rm -f *.o neon_add3 neon_hello
 @end example
 
-AARCH64 SVE 编译运行
+@b{AARCH64 SVE}
 
 SVE 的测试代码在目录 ~/work/sve 下面。
 AARCH64 SVE 汇编编译运行
@@ -147,9 +157,6 @@ cc   sve_strlen.o sve_strlen_test.o   -o sve_strlen
 len=9 of "hello sve"
 rm -f *.o sve_strlen sve_hello
 @end example
-
-因为这个例子的代码量比较少，因此贴出 source code 的源代码，更多内容，
-见参考文献 [6]
 
 @example
 $ cat sve_strlen.S
