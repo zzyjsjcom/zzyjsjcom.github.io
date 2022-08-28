@@ -49,8 +49,10 @@ This manual is for program, version version.
 @node Docker Usage Introduction
 @chapter Docker Usage Introduction
 以下几篇文章可以作为 Docker 的通用入门文章
+@example
 https://www.runoob.com/docker/ubuntu-docker-install.html
 https://www.runoob.com/docker/docker-image-usage.html
+@end example
 
 @node ARM64 code sample
 @chapter ARM64 code sample
