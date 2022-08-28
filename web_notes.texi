@@ -35,21 +35,47 @@ Published by
 
 @ifnottex
 @node Top
-@top top
+@top web notes
 
 This manual is for program, version version.
 @end ifnottex
 
 @menu
-* texinfo uage::
+* texinfo install::
+* texinfo usage::
 @c * Copying::  free time team
 @end menu
 
-@node texinfo uage
-@chapter texinfo uage
+@node texinfo install
+@chapter texinfo install
 @example
 sudo apt-get install texi2html
 texi2html test.texi
+@end example
+
+@node texinfo usage
+@chapter texinfo usage
+
+@b{add index}
+@example
+@@node Document
+@@chapter Document
+@@b@{Document@}
+@@example
+@@url@{./document/index.html, document@}
+@@url@{./cs_dev/index.html, computer development@}
+@@end example
+@end example
+
+@b{content}
+@example
+@@node test1
+@@chapter test1
+test content
+
+@@node Free-time team test2
+@@chapter Free-time team test2
+test content
 @end example
 
 @bye

@@ -55,24 +55,51 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[Index]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="top"></a>
-<h1 class="settitle">top</h1>
+<a name="web-notes"></a>
+<h1 class="settitle">web notes</h1>
 
 <p>This manual is for program, version version.
 </p>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top"><a href="#texinfo-uage">1. texinfo uage</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top"><a href="#texinfo-install">1. texinfo install</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#texinfo-usage">2. texinfo usage</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 
 <hr size="1">
-<a name="texinfo-uage"></a>
+<a name="texinfo-install"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left">[<a href="#texinfo-usage" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#texinfo-usage" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="texinfo-install-1"></a>
+<h1 class="chapter">1. texinfo install</h1>
+<table><tr><td>&nbsp;</td><td><pre class="example">sudo apt-get install texi2html
+texi2html test.texi
+</pre></td></tr></table>
+
+
+<hr size="6">
+<a name="texinfo-usage"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#texinfo-install" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#texinfo-install" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[ &gt;&gt; ]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -84,10 +111,28 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[Index]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="texinfo-uage-1"></a>
-<h1 class="chapter">1. texinfo uage</h1>
-<table><tr><td>&nbsp;</td><td><pre class="example">sudo apt-get install texi2html
-texi2html test.texi
+<a name="texinfo-usage-1"></a>
+<h1 class="chapter">2. texinfo usage</h1>
+
+<p><b>add index</b>
+</p><table><tr><td>&nbsp;</td><td><pre class="example">@node Document
+@chapter Document
+@b{Document}
+@example
+@url{./document/index.html, document}
+@url{./cs_dev/index.html, computer development}
+@end example
+</pre></td></tr></table>
+
+
+<p><b>content</b>
+</p><table><tr><td>&nbsp;</td><td><pre class="example">@node test1
+@chapter test1
+test content
+
+@node Free-time team test2
+@chapter Free-time team test2
+test content
 </pre></td></tr></table>
 
 
@@ -103,7 +148,8 @@ texi2html test.texi
 <div class="contents">
 
 <ul class="toc">
-  <li><a name="toc-texinfo-uage-1" href="#texinfo-uage">1. texinfo uage</a></li>
+  <li><a name="toc-texinfo-install-1" href="#texinfo-install">1. texinfo install</a></li>
+  <li><a name="toc-texinfo-usage-1" href="#texinfo-usage">2. texinfo usage</a></li>
 </ul>
 </div>
 <hr size="1">
