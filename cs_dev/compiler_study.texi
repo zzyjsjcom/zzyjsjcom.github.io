@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle computer development
+@settitle title
 
 @copying
 This manual is for Document, version 1.0.
@@ -35,23 +35,22 @@ Published by
 
 @ifnottex
 @node Top
-@top Computer Development
+@top top
 
 This manual is for program, version version.
 @end ifnottex
 
 @menu
-* Computer Development::
+* Introduction::
 @c * Copying::  free time team
 @end menu
 
-@node Computer Development
-@chapter Computer Development
-@b{Computer Development}
-@example
-@url{arm64_docker.html, ARM64 env on X86 docker}
-@url{riscv64_docker.html, RISCV64 env on X86 docker}
-@url{compiler_study.html, Compiler Sample Code Study}
-@end example
+@node Introduction
+@chapter Introduction
+
+
+
+
+
 
 @bye
