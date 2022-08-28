@@ -35,7 +35,7 @@ Published by
 
 @ifnottex
 @node Top
-@top ARM64 env on X86 docker
+@top RISCV64 env on X86 docker
 
 This manual is for program, version version.
 @end ifnottex
