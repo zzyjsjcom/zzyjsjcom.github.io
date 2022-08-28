@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle title
+@settitle ARM64 Env
 
 @copying
 This manual is for Document, version 1.0.
@@ -56,10 +56,12 @@ https://www.runoob.com/docker/docker-image-usage.html
 
 @node ARM64 code sample
 @chapter ARM64 code sample
-AARCH64 基本汇编编译运行
 
-切换到目录 ~/work/aarch64_asm，有一个内置的 aarch64 的基本汇编测试程序，如下
+@b{AARCH64 基本汇编程序}
 
+切换到目录 ~/aarch64_sample/aarch64_asm，有一个内置的 aarch64 的基本汇编测试程序，如下
+
+@example
 $ cat hello.S
         .arch armv8-a
         .text
@@ -82,14 +84,17 @@ main:
         .align  4
 hello_str:
         .string "hello aarch64\n"
+@end example
 
 执行 makefile 文件可以得到如下结果
 
+@example
 $ make run clean
 gcc     hello.S   -o hello
 ./hello
 hello aarch64
 rm -f hello *.o
+@end example
 
 AARCH64 Neon 编译运行
 

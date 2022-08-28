@@ -17,10 +17,10 @@ Maintained by: Many creative people.
 Send bugs and suggestions to <texi2html-bug@nongnu.org>
 -->
 <head>
-<title>title</title>
+<title>ARM64 Env</title>
 
-<meta name="description" content="title">
-<meta name="keywords" content="title">
+<meta name="description" content="ARM64 Env">
+<meta name="keywords" content="ARM64 Env">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="texi2html 1.82">
@@ -114,41 +114,46 @@ https://www.runoob.com/docker/docker-image-usage.html
 </tr></table>
 <a name="ARM64-code-sample-1"></a>
 <h1 class="chapter">2. ARM64 code sample</h1>
-<p>AARCH64 基本汇编编译运行
+
+<p><b>AARCH64 基本汇编程序</b>
 </p>
-<p>切换到目录 ~/work/aarch64_asm，有一个内置的 aarch64 的基本汇编测试程序，如下
+<p>切换到目录 ~/aarch64_sample/aarch64_asm，有一个内置的 aarch64 的基本汇编测试程序，如下
 </p>
-<p>$ cat hello.S
+<table><tr><td>&nbsp;</td><td><pre class="example">$ cat hello.S
         .arch armv8-a
         .text
         .align  2
-</p>
-<p>        .global main
+
+        .global main
         .type   main, %function
 main:
         stp     x29, x30, [sp, -16]!
-</p>
-<p>        adrp    x0, hello_str
+
+        adrp    x0, hello_str
         add     x0, x0, :lo12:hello_str
         bl      printf
         mov     x0, 0
-</p>
-<p>        ldp     x29, x30, [sp], 16
+
+        ldp     x29, x30, [sp], 16
         ret
-</p>
-<p>        .section        .rodata
+
+        .section        .rodata
         .align  4
 hello_str:
         .string &quot;hello aarch64\n&quot;
-</p>
+</pre></td></tr></table>
+
+
 <p>执行 makefile 文件可以得到如下结果
 </p>
-<p>$ make run clean
+<table><tr><td>&nbsp;</td><td><pre class="example">$ make run clean
 gcc     hello.S   -o hello
 ./hello
 hello aarch64
 rm -f hello *.o
-</p>
+</pre></td></tr></table>
+
+
 <p>AARCH64 Neon 编译运行
 </p>
 <p>Neon 的测试代码在目录 ~/work/neon 下面。
