@@ -41,10 +41,16 @@ This manual is for program, version version.
 @end ifnottex
 
 @menu
+* github token::
 * texinfo install::
 * texinfo usage::
 @c * Copying::  free time team
 @end menu
+
+@node github token
+@chapter github token
+settings -> Developer settings -> personal access tokens -> Generate new token,
+在Note中填入这个token的具体用途，然后点击最下方的Generate token按钮即可生成，注意要把这个token记录下来，之后push代码时密码使用这个token就可以啦
 
 @node texinfo install
 @chapter texinfo install

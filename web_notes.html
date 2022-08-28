@@ -61,20 +61,45 @@ ul.toc {list-style: none}
 <p>This manual is for program, version version.
 </p>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top"><a href="#texinfo-install">1. texinfo install</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top"><a href="#github-token">1. github token</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
-<tr><td align="left" valign="top"><a href="#texinfo-usage">2. texinfo usage</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top"><a href="#texinfo-install">2. texinfo install</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#texinfo-usage">3. texinfo usage</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 
 <hr size="1">
-<a name="texinfo-install"></a>
+<a name="github-token"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[<a href="#texinfo-usage" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left">[<a href="#texinfo-install" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#texinfo-install" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="github-token-1"></a>
+<h1 class="chapter">1. github token</h1>
+<p>settings -&gt; Developer settings -&gt; personal access tokens -&gt; Generate new token,
+在Note中填入这个token的具体用途，然后点击最下方的Generate token按钮即可生成，注意要把这个token记录下来，之后push代码时密码使用这个token就可以啦
+</p>
+<hr size="6">
+<a name="texinfo-install"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#github-token" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#texinfo-usage" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#github-token" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
 <td valign="middle" align="left">[<a href="#texinfo-usage" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -87,7 +112,7 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
 <a name="texinfo-install-1"></a>
-<h1 class="chapter">1. texinfo install</h1>
+<h1 class="chapter">2. texinfo install</h1>
 <table><tr><td>&nbsp;</td><td><pre class="example">sudo apt-get install texi2html
 texi2html test.texi
 </pre></td></tr></table>
@@ -112,7 +137,7 @@ texi2html test.texi
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
 <a name="texinfo-usage-1"></a>
-<h1 class="chapter">2. texinfo usage</h1>
+<h1 class="chapter">3. texinfo usage</h1>
 
 <p><b>add index</b>
 </p><table><tr><td>&nbsp;</td><td><pre class="example">@node Document
@@ -148,8 +173,9 @@ test content
 <div class="contents">
 
 <ul class="toc">
-  <li><a name="toc-texinfo-install-1" href="#texinfo-install">1. texinfo install</a></li>
-  <li><a name="toc-texinfo-usage-1" href="#texinfo-usage">2. texinfo usage</a></li>
+  <li><a name="toc-github-token-1" href="#github-token">1. github token</a></li>
+  <li><a name="toc-texinfo-install-1" href="#texinfo-install">2. texinfo install</a></li>
+  <li><a name="toc-texinfo-usage-1" href="#texinfo-usage">3. texinfo usage</a></li>
 </ul>
 </div>
 <hr size="1">
