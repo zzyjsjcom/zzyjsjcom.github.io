@@ -47,9 +47,14 @@ This manual is for program, version version.
 
 @node ARM64 env on X86 docker
 @chapter ARM64 env on X86 docker
-@b{ARM64 env on X86 docker}
+@b{test1}
 @example
+test1 a
 @end example
 
+@b{test2}
+@example
+test2 a
+@end example
 
 @bye
