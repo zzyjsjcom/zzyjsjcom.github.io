@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle title
+@settitle web notes
 
 @copying
 This manual is for Document, version 1.0.
@@ -41,16 +41,15 @@ This manual is for program, version version.
 @end ifnottex
 
 @menu
-* Introduction::
+* texinfo uage::
 @c * Copying::  free time team
 @end menu
 
-@node Introduction
-@chapter Introduction
-
-
-
-
-
+@node texinfo uage
+@chapter texinfo uage
+@example
+sudo apt-get install texi2html
+texi2html test.texi
+@end example
 
 @bye
