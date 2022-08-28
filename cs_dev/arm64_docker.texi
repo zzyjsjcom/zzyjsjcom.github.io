@@ -35,22 +35,21 @@ Published by
 
 @ifnottex
 @node Top
-@top top
+@top ARM64 env on X86 docker
 
 This manual is for program, version version.
 @end ifnottex
 
 @menu
-* Introduction::
+* ARM64 env on X86 docker::
 @c * Copying::  free time team
 @end menu
 
-@node Introduction
-@chapter Introduction
-
-
-
-
+@node ARM64 env on X86 docker
+@chapter ARM64 env on X86 docker
+@b{ARM64 env on X86 docker}
+@example
+@end example
 
 
 @bye
