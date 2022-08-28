@@ -41,20 +41,14 @@ This manual is for program, version version.
 @end ifnottex
 
 @menu
-* ARM64 env on X86 docker::
+* Docker Usage Introduction::
 @c * Copying::  free time team
 @end menu
 
-@node ARM64 env on X86 docker
-@chapter ARM64 env on X86 docker
-@b{Docker Usage Introduction}
-@example
-test1 a
-@end example
+@node Docker Usage Introduction
+@chapter Docker Usage Introduction
+test
+test
 
-@b{test2}
-@example
-test2 a
-@end example
 
 @bye
