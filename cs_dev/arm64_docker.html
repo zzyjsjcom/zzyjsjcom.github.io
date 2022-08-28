@@ -156,12 +156,12 @@ rm -f hello *.o
 
 <p>AARCH64 Neon 编译运行
 </p>
-<p>Neon 的测试代码在目录 ~/work/neon 下面。
+<p>Neon 的测试代码在目录 ~/aarch64_sample/neon 下面。
 AARCH64 Neon 汇编编译运行
 </p>
 <p>这是一个批量处理16个 unsigned char 类型数据做加法运算的例子，运行 make run_asm clean 结果如下
 </p>
-<p>$ make run_asm clean
+<table><tr><td>&nbsp;</td><td><pre class="example">$ make run_asm clean
 cc    -c -o neon_add3.o neon_add3.S
 cc -g -Wall -march=armv8.2-a -O2   -c -o neon_add3_test.o neon_add3_test.c
 cc   neon_add3.o neon_add3_test.o   -o neon_add3
@@ -171,18 +171,22 @@ name: data
 name: data (new)
 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 rm -f *.o neon_add3 neon_hello
-</p>
+</pre></td></tr></table>
+
+
 <p>AARCH64 Neon intrinsics 编译运行
 </p>
 <p>这是一个用neon计算 1,2,3 ... 加到99 的例子，运行 make run_intrinsics clean 结果如下
 </p>
-<p>$ make run_intrinsics clean
+<table><tr><td>&nbsp;</td><td><pre class="example">$ make run_intrinsics clean
 cc -g -Wall -march=armv8.2-a -O2   -c -o neon_hello.o neon_hello.c
 cc   neon_hello.o   -o neon_hello
 ./neon_hello
 sum=4950
 rm -f *.o neon_add3 neon_hello
-</p>
+</pre></td></tr></table>
+
+
 <p>AARCH64 SVE 编译运行
 </p>
 <p>SVE 的测试代码在目录 ~/work/sve 下面。
@@ -192,27 +196,29 @@ AARCH64 SVE 汇编编译运行
 </p>
 <p>注意: arm sve 指令是 armv8.2 开始支持的，因此 -march 后面的参数是: armv8.2-a+sve
 </p>
-<p>$ make run_asm clean
+<table><tr><td>&nbsp;</td><td><pre class="example">$ make run_asm clean
 cc    -c -o sve_strlen.o sve_strlen.S
 /home/dev/bin/gcc_sve/bin/aarch64-linux-gnu-gcc -g -Wall -march=armv8.2-a+sve -O2 -c -o sve_strlen_test.o sve_strlen_test.c
 cc   sve_strlen.o sve_strlen_test.o   -o sve_strlen
 ./sve_strlen
 len=9 of &quot;hello sve&quot;
 rm -f *.o sve_strlen sve_hello
-</p>
+</pre></td></tr></table>
+
+
 <p>因为这个例子的代码量比较少，因此贴出 source code 的源代码，更多内容，
 见参考文献 [6]
 </p>
-<p>$ cat sve_strlen.S
+<table><tr><td>&nbsp;</td><td><pre class="example">$ cat sve_strlen.S
 // reference: https://alastairreid.github.io/papers/sve-ieee-micro-2017.pdf
         .arch armv8.2-a+sve
         .text
         .align  2
-</p>
-<p>        .global sve_strlen
+
+        .global sve_strlen
         .type   sve_strlen, %function
-</p>
-<p>sve_strlen:
+
+sve_strlen:
         mov x1, x0
         ptrue p0.b
 .loop:
@@ -225,12 +231,14 @@ rm -f *.o sve_strlen sve_hello
         b.last .loop
         sub x0, x1, x0
 ret
-</p>
+</pre></td></tr></table>
+
+
 <p>AARCH64 SVE intrinsics 编译运行
 </p>
 <p>这是一个通过 sve intrinsics 做批量运算的例子，运行 make run_intrinsics clean 结果如下
 </p>
-<p>$ make run_intrinsics clean
+<table><tr><td>&nbsp;</td><td><pre class="example">$ make run_intrinsics clean
 /home/dev/bin/gcc_sve/bin/aarch64-linux-gnu-gcc -g -Wall -march=armv8.2-a+sve -O2 -c -o sve_hello.o sve_hello.c
 cc   sve_hello.o   -o sve_hello
 ./sve_hello
@@ -245,7 +253,9 @@ cc   sve_hello.o   -o sve_hello
 1.876984 1.876984 1.876984, 0.888889, 0.988095
 1.888095 1.888095 1.888095, 0.900000, 0.988095
 rm -f *.o sve_strlen sve_hello
-</p>
+</pre></td></tr></table>
+
+
 <hr size="6">
 <a name="SEC_Contents"></a>
 <table cellpadding="1" cellspacing="1" border="0">
