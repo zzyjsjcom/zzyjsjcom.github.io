@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle Document
+@settitle title
 
 @copying
 This manual is for Document, version 1.0.
@@ -35,23 +35,22 @@ Published by
 
 @ifnottex
 @node Top
-@top Document
+@top top
 
 This manual is for program, version version.
 @end ifnottex
 
 @menu
-* Document::
+* Introduction::
 @c * Copying::  free time team
 @end menu
 
-@node Document
-@chapter Document
-@b{Document}
-@example
-@url{./document/index.html, document}
-@url{./cs_dev/index.html, computer development}
-@url{./web_notes.html, web notes}
-@end example
+@node Introduction
+@chapter Introduction
+
+
+
+
+
 
 @bye
