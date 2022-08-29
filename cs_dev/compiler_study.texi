@@ -35,23 +35,57 @@ Published by
 
 @ifnottex
 @node Top
-@top top
+@top compiler sample code study
 
 This manual is for program, version version.
 @end ifnottex
 
 @menu
-* Introduction::
+* mini_c::
 @c * Copying::  free time team
 @end menu
 
-@node Introduction
-@chapter Introduction
-
-todo todo
+@node mini_c
+@chapter mini_c
 
 
+mini_c 是一个玩具编译器，它由5000行左右的C语言代码实现，便于学习。
+这个编译器包括前端和后端两个部分，前端主要包括词法分析、语法分析、语义分析，以及与它们交互的符号表和错误处理等。
+在后端，开发人员手动设计与实现了一个解释器，该解释器专门用于解释执行mini_c生成的仿8086汇编代码。
 
+代码仓可以用以下命令clone下来:
+@example
+git clone https://gitee.com/zzyjsjcom/computer_dev
+@end example
 
+进入子目录 mini_c 就可以看到源代码了。
+
+@example
+cd mini_c
+make run
+
+cd front_end && make
+make[1]: Entering directory '/home/zzy/disk2/practice/mini_c/front_end'
+cc   -c -o main.o main.c
+cc   -c -o scan.o scan.c
+cc   -c -o parser.o parser.c
+cc   -c -o tools.o tools.c
+cc   -c -o code.o code.c
+cc   main.o scan.o parser.o tools.o code.o   -o main
+make[1]: Leaving directory '/home/zzy/disk2/practice/mini_c/front_end'
+cd back_end && make
+make[1]: Entering directory '/home/zzy/disk2/practice/mini_c/back_end'
+cc   -c -o zm_main.o zm_main.c
+cc   -c -o zm_exec.o zm_exec.c
+cc   -c -o zm_loade.o zm_loade.c
+gcc -o zm_main zm_main.o zm_exec.o zm_loade.o
+make[1]: Leaving directory '/home/zzy/disk2/practice/mini_c/back_end'
+cp front_end/main main && cp back_end/zm_main zm_main
+./main test_proc.c
+./zm_main
+Please input a integer number:1
+
+The result is 5050
+@end example
 
 @bye
