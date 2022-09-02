@@ -1,0 +1,100 @@
+\input texinfo
+
+@documentlanguage en
+@documentencoding UTF-8
+
+@settitle Linux Kernel Study
+
+@copying
+This manual is for Document, version 1.0.
+
+Copyright @copyright{} years free time team.
+
+@quotation
+Permission is granted to
+@end quotation
+@end copying
+
+@titlepage
+@title name-of-manual-when-printed en
+@subtitle subtitle-if-any
+@subtitle second-subtitle
+@author author
+
+@c  The following two commands
+@c  start the copyright page.
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by
+@end titlepage
+
+@c So the toc is printed at the start.
+@contents
+
+@ifnottex
+@node Top
+@top Linux Kernel Study
+
+This manual is for program, version version.
+@end ifnottex
+
+@menu
+* BiscuitOS Introduction::
+@c * Copying::  free time team
+@end menu
+
+@node BiscuitOS Introduction
+@chapter BiscuitOS Introduction
+
+通过如下命令拉取代码，并编译
+@example
+https://gitee.com/zzyjsjcom/biscuitos_prebuild.git
+sudo apt-get install gcc-aarch64-linux-gnu
+make prepare image
+@end example
+
+运行如下命令，进入BiscuitOS环境
+@example
+make run
+@end example
+
+BiscuitOS会在 /mnt 下自动挂在上你的 home 目录，假设你的代码放到了 ~ 目录，那么切换到如下目录，
+并执行su切换到root用户，执行make运行
+
+@example
+cd /mnt/biscuitos_prebuild/test_ko/
+su
+# make
+
+module ./hello.ko load
+[  366.895161] hello: loading out-of-tree module taints kernel.
+[  366.903751] hello world
+
+module ./armv8_main.ko load
+[  366.929134] test
+[  366.929681] hello...
+[  366.929816] cntfrq=3b9aca0, cntpct=5575cd055, cntp_tval=a8a32f9a
+[  366.929968] ccsidr=700fe01a
+[  366.930163] ACTLR_EL1: 0x0000000000000000
+[  366.930291] ID_AA64PFR0_EL1: 0x0000000000000022
+[  366.930422] ID_AA64PFR1_EL1: 0x0000000000000000
+[  366.930550] ID_AA64ISAR0_EL1: 0x0000000000011120
+[  366.930664] TCR_EL1: 0x00400032b5503510
+[  366.930774] val=0x00400072b5503510
+[  366.931795] TCR_EL1: 0x00400032b5503510
+[  366.936911] val=0x00400012b5503510
+[  366.938146] TCR_EL1: 0x00400032b5503510
+... 以下省略若干行输出
+@end example
+
+Ctrl+C 退出 BiscuitOS系统。
+
+如果想手动构建 BiscuitOS系统，或者了解更多的linux内核的实践知识，可以访问朋友的博客。
+@example
+https://biscuitos.github.io/blog/BiscuitOS_Catalogue/
+@end example
+本节内容对应《计算机系统开发与优化实战》第 8.3 节，arm 的一些实验内容，也可以对照第一章和第二章。
+
+@bye

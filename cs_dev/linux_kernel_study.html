@@ -17,10 +17,10 @@ Maintained by: Many creative people.
 Send bugs and suggestions to <texi2html-bug@nongnu.org>
 -->
 <head>
-<title>computer development</title>
+<title>Linux Kernel Study</title>
 
-<meta name="description" content="computer development">
-<meta name="keywords" content="computer development">
+<meta name="description" content="Linux Kernel Study">
+<meta name="keywords" content="Linux Kernel Study">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="texi2html 1.82">
@@ -55,19 +55,19 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[Index]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="Computer-Development-1"></a>
-<h1 class="settitle">Computer Development</h1>
+<a name="Linux-Kernel-Study"></a>
+<h1 class="settitle">Linux Kernel Study</h1>
 
 <p>This manual is for program, version version.
 </p>
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top"><a href="#Computer-Development">1. Computer Development</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top"><a href="#BiscuitOS-Introduction">1. BiscuitOS Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
 
 <hr size="1">
-<a name="Computer-Development"></a>
+<a name="BiscuitOS-Introduction"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
 <td valign="middle" align="left">[ &gt; ]</td>
@@ -84,16 +84,58 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[Index]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="Computer-Development-2"></a>
-<h1 class="chapter">1. Computer Development</h1>
-<p><b>Computer Development</b>
-</p><table><tr><td>&nbsp;</td><td><pre class="example"><a href="arm64_docker.html">ARM64 env on X86 docker</a>
-<a href="riscv64_docker.html">RISCV64 env on X86 docker</a>
-<a href="compiler_study.html">Compiler Sample Code Study</a>
-<a href="linux_kernel_study.html">Linux Kernel Study</a>
+<a name="BiscuitOS-Introduction-1"></a>
+<h1 class="chapter">1. BiscuitOS Introduction</h1>
+
+<p>通过如下命令拉取代码，并编译
+</p><table><tr><td>&nbsp;</td><td><pre class="example">https://gitee.com/zzyjsjcom/biscuitos_prebuild.git
+sudo apt-get install gcc-aarch64-linux-gnu
+make prepare image
 </pre></td></tr></table>
 
 
+<p>运行如下命令，进入BiscuitOS环境
+</p><table><tr><td>&nbsp;</td><td><pre class="example">make run
+</pre></td></tr></table>
+
+
+<p>BiscuitOS会在 /mnt 下自动挂在上你的 home 目录，假设你的代码放到了 ~ 目录，那么切换到如下目录，
+并执行su切换到root用户，执行make运行
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">cd /mnt/biscuitos_prebuild/test_ko/
+su
+# make
+
+module ./hello.ko load
+[  366.895161] hello: loading out-of-tree module taints kernel.
+[  366.903751] hello world
+
+module ./armv8_main.ko load
+[  366.929134] test
+[  366.929681] hello...
+[  366.929816] cntfrq=3b9aca0, cntpct=5575cd055, cntp_tval=a8a32f9a
+[  366.929968] ccsidr=700fe01a
+[  366.930163] ACTLR_EL1: 0x0000000000000000
+[  366.930291] ID_AA64PFR0_EL1: 0x0000000000000022
+[  366.930422] ID_AA64PFR1_EL1: 0x0000000000000000
+[  366.930550] ID_AA64ISAR0_EL1: 0x0000000000011120
+[  366.930664] TCR_EL1: 0x00400032b5503510
+[  366.930774] val=0x00400072b5503510
+[  366.931795] TCR_EL1: 0x00400032b5503510
+[  366.936911] val=0x00400012b5503510
+[  366.938146] TCR_EL1: 0x00400032b5503510
+... 以下省略若干行输出
+</pre></td></tr></table>
+
+
+<p>Ctrl+C 退出 BiscuitOS系统。
+</p>
+<p>如果想手动构建 BiscuitOS系统，或者了解更多的linux内核的实践知识，可以访问朋友的博客。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">https://biscuitos.github.io/blog/BiscuitOS_Catalogue/
+</pre></td></tr></table>
+
+<p>本节内容对应《计算机系统开发与优化实战》第 8.3 节，arm 的一些实验内容，也可以对照第一章和第二章。
+</p>
 <hr size="6">
 <a name="SEC_Contents"></a>
 <table cellpadding="1" cellspacing="1" border="0">
@@ -106,7 +148,7 @@ ul.toc {list-style: none}
 <div class="contents">
 
 <ul class="toc">
-  <li><a name="toc-Computer-Development-2" href="#Computer-Development">1. Computer Development</a></li>
+  <li><a name="toc-BiscuitOS-Introduction-1" href="#BiscuitOS-Introduction">1. BiscuitOS Introduction</a></li>
 </ul>
 </div>
 <hr size="1">

@@ -52,6 +52,7 @@ This manual is for program, version version.
 @url{arm64_docker.html, ARM64 env on X86 docker}
 @url{riscv64_docker.html, RISCV64 env on X86 docker}
 @url{compiler_study.html, Compiler Sample Code Study}
+@url{linux_kernel_study.html, Linux Kernel Study}
 @end example
 
 @bye
