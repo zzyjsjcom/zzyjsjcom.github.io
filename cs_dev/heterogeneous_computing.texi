@@ -3,7 +3,7 @@
 @documentlanguage en
 @documentencoding UTF-8
 
-@settitle title
+@settitle Heterogeneous Computing
 
 @copying
 This manual is for Document, version 1.0.
@@ -35,7 +35,7 @@ Published by
 
 @ifnottex
 @node Top
-@top top
+@top Heterogeneous Computing
 
 @end ifnottex
 
@@ -56,6 +56,61 @@ Nvidia 的显卡一般都很贵，但是很多平台提供了免费平台可以�
 
 @node OpenCL setup on Intel Integrated GPU
 @chapter OpenCL setup on Intel Integrated GPU
+
+@b{准备工作}
+如果你的计算机有独立显卡，比如 AMD 显卡或者 Nvidia 显卡，那么可以直接安装独立显卡的驱动来学习 OpenCL 知识。
+AMD 和 Nvidia 独立显卡安装驱动，网上有很多教程，大家可以跳过本节内容。
+否则，如果你的cpu是intel的，那么可以通过下面命令查看你的cpu是否包含集成显卡。如果不包含，那么就没办法搭建 OpenCL 实验环境了。
+运行如下命令，如果你的输出跟下面这个输出很类似，那么说明你的intel cpu 包含了集成显卡，可以继续。
+$ lspci | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation Skylake GT2 [HD Graphics 520] (rev 07)
+
+
+@b{安装一些通用依赖包}
+// install OpenCL commoan package
+sudo apt install ocl-icd-libopencl1
+sudo apt install opencl-headers
+sudo apt install clinfo
+sudo apt install ocl-icd-opencl-dev
+sudo apt install intel-opencl-icd
+
+@b{添加 package repository}
+@b{Note:} 这里要特别注意，以下的命令是针对 ubuntu-20.04 的，如果你是其他版本的 ubuntu 系统，那么需要把 focal 之类的字样修改成对应发行版的代号。
+
+sudo apt-get install -y gpg-agent wget
+wget -qO - https://repositories.intel.com/graphics/intel-graphics.key |
+  sudo apt-key add -
+sudo apt-add-repository \
+  'deb [arch=amd64] https://repositories.intel.com/graphics/ubuntu focal main'
+
+
+@b{安装 GPU run-time 软件包}
+sudo apt-get update
+sudo apt-get install \
+  intel-opencl-icd \
+  intel-level-zero-gpu level-zero \
+  intel-media-va-driver-non-free libmfx1
+
+@b{安装开发者软件包}
+sudo apt-get install \
+  libigc-dev \
+  intel-igc-cm \
+  libigdfcl-dev \
+  libigfxcmrt-dev \
+  level-zero-dev
+
+@b{其它配置}
+stat -c "%G" /dev/dri/render*
+groups $@{USER@}
+sudo gpasswd -a $@{USER@} render
+newgrp render
+
+@b{参考文献}
+https://plumz.me/archives/5579/
+https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html
+https://github.com/intel/compute-runtime/blob/master/DISTRIBUTIONS.md
+https://github.com/intel/compute-runtime/blob/master/opencl/doc/DISTRIBUTIONS.md
+https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-focal.html
 
 @node CUDA free platform Introduction
 @chapter CUDA free platform Introduction

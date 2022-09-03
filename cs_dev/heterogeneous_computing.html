@@ -17,10 +17,10 @@ Maintained by: Many creative people.
 Send bugs and suggestions to <texi2html-bug@nongnu.org>
 -->
 <head>
-<title>title</title>
+<title>Heterogeneous Computing</title>
 
-<meta name="description" content="title">
-<meta name="keywords" content="title">
+<meta name="description" content="Heterogeneous Computing">
+<meta name="keywords" content="Heterogeneous Computing">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="texi2html 1.82">
@@ -55,8 +55,8 @@ ul.toc {list-style: none}
 <td valign="middle" align="left">[Index]</td>
 <td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
 </tr></table>
-<a name="top"></a>
-<h1 class="settitle">top</h1>
+<a name="Heterogeneous-Computing"></a>
+<h1 class="settitle">Heterogeneous Computing</h1>
 
 
 <table class="menu" border="0" cellspacing="0">
@@ -116,6 +116,61 @@ Nvidia 的显卡一般都很贵，但是很多平台提供了免费平台可以�
 <a name="OpenCL-setup-on-Intel-Integrated-GPU-1"></a>
 <h1 class="chapter">2. OpenCL setup on Intel Integrated GPU</h1>
 
+<p><b>准备工作</b>
+如果你的计算机有独立显卡，比如 AMD 显卡或者 Nvidia 显卡，那么可以直接安装独立显卡的驱动来学习 OpenCL 知识。
+AMD 和 Nvidia 独立显卡安装驱动，网上有很多教程，大家可以跳过本节内容。
+否则，如果你的cpu是intel的，那么可以通过下面命令查看你的cpu是否包含集成显卡。如果不包含，那么就没办法搭建 OpenCL 实验环境了。
+运行如下命令，如果你的输出跟下面这个输出很类似，那么说明你的intel cpu 包含了集成显卡，可以继续。
+$ lspci | grep -i vga
+00:02.0 VGA compatible controller: Intel Corporation Skylake GT2 [HD Graphics 520] (rev 07)
+</p>
+
+<p><b>安装一些通用依赖包</b>
+// install OpenCL commoan package
+sudo apt install ocl-icd-libopencl1
+sudo apt install opencl-headers
+sudo apt install clinfo
+sudo apt install ocl-icd-opencl-dev
+sudo apt install intel-opencl-icd
+</p>
+<p><b>添加 package repository</b>
+<b>Note:</b> 这里要特别注意，以下的命令是针对 ubuntu-20.04 的，如果你是其他版本的 ubuntu 系统，那么需要把 focal 之类的字样修改成对应发行版的代号。
+</p>
+<p>sudo apt-get install -y gpg-agent wget
+wget -qO - https://repositories.intel.com/graphics/intel-graphics.key |
+  sudo apt-key add -
+sudo apt-add-repository \
+  &rsquo;deb [arch=amd64] https://repositories.intel.com/graphics/ubuntu focal main&rsquo;
+</p>
+
+<p><b>安装 GPU run-time 软件包</b>
+sudo apt-get update
+sudo apt-get install \
+  intel-opencl-icd \
+  intel-level-zero-gpu level-zero \
+  intel-media-va-driver-non-free libmfx1
+</p>
+<p><b>安装开发者软件包</b>
+sudo apt-get install \
+  libigc-dev \
+  intel-igc-cm \
+  libigdfcl-dev \
+  libigfxcmrt-dev \
+  level-zero-dev
+</p>
+<p><b>其它配置</b>
+stat -c &quot;%G&quot; /dev/dri/render*
+groups ${USER}
+sudo gpasswd -a ${USER} render
+newgrp render
+</p>
+<p><b>参考文献</b>
+https://plumz.me/archives/5579/
+https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html
+https://github.com/intel/compute-runtime/blob/master/DISTRIBUTIONS.md
+https://github.com/intel/compute-runtime/blob/master/opencl/doc/DISTRIBUTIONS.md
+https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-focal.html
+</p>
 <hr size="6">
 <a name="CUDA-free-platform-Introduction"></a>
 <table cellpadding="1" cellspacing="1" border="0">
