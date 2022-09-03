@@ -48,7 +48,7 @@ This manual is for program, version version.
 
 @node mini_c
 @chapter mini_c
-
+本节内容可以对照 《计算机系统开发与优化实战》第2.4节。
 
 mini_c 是一个玩具编译器，它由5000行左右的C语言代码实现，便于学习。
 这个编译器包括前端和后端两个部分，前端主要包括词法分析、语法分析、语义分析，以及与它们交互的符号表和错误处理等。
@@ -91,6 +91,7 @@ The result is 5050
 
 @node llvm_essential code
 @chapter llvm_essential code
+本节内容可以对照 《计算机系统开发与优化实战》第2.5节。
 
 《llvm essentials》这本书是学习llvm很不错的资料，但可惜的是这本书上的代码太老了，在新的编译器上编译不过。
 首先通过下面的命令安装 clang-6 编译器，目前绝大部分的主流ubuntu版本，都支持 clang-6。但即使是clang-6 也会有很多代码编译不过。

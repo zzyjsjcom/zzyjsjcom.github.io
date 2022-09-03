@@ -56,6 +56,7 @@ Nvidia 的显卡一般都很贵，但是很多平台提供了免费平台可以�
 
 @node OpenCL setup on Intel Integrated GPU
 @chapter OpenCL setup on Intel Integrated GPU
+本节内容可以对照 《计算机系统开发与优化实战》第7章的内容。
 
 @b{准备工作}
 
@@ -129,6 +130,7 @@ https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-focal.html
 
 @node CUDA free platform Introduction
 @chapter CUDA free platform Introduction
+本节内容可以对照 《计算机系统开发与优化实战》这本书第6.2节的内容。
 
 如果你有 nvidia 的独立显卡，那么可以跳过本节内容。网上有很多 nvidia GPU 驱动的安装方法可以参考。
 本节内容介绍百度飞桨平台提供的免费 nvidia GPU 开发环境（当然它是有很多限制的）。
@@ -138,6 +140,6 @@ https://dgpu-docs.intel.com/installation-guides/ubuntu/ubuntu-focal.html
 项目创建完成之后，从“我的项目”里面可以找到您刚才创建好的项目。
 点进去，找到“启动环境”，然后选择一个带 GPU 卡的配置。
 这样就进入到了你的项目。这个时候，你会看到一个叫“main.ipynb” 的python程序文件，点击这个程序右边的叉，把这个程序关闭。
-然后点击“终端”，这样你就进入命令行了，可以通过git命令从网站上下载你的cuda程序，并编译运行了。
+然后点击“终端”，这样你就进入命令行了，可以通过git命令从网站上下载你的cuda程序，就可以编译运行了。
 
 @bye
