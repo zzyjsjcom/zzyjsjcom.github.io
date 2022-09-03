@@ -37,7 +37,6 @@ Published by
 @node Top
 @top top
 
-This manual is for program, version version.
 @end ifnottex
 
 @menu
