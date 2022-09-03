@@ -62,6 +62,10 @@ ul.toc {list-style: none}
 <table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top"><a href="#Introduction">1. Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
+<tr><td align="left" valign="top"><a href="#OpenCL-setup-on-Intel-Integrated-GPU">2. OpenCL setup on Intel Integrated GPU</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#CUDA-free-platform-Introduction">3. CUDA free platform Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
 </table>
 
 
@@ -69,11 +73,11 @@ ul.toc {list-style: none}
 <a name="Introduction"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left">[<a href="#OpenCL-setup-on-Intel-Integrated-GPU" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#Top" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left">[<a href="#OpenCL-setup-on-Intel-Integrated-GPU" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -85,11 +89,53 @@ ul.toc {list-style: none}
 </tr></table>
 <a name="Introduction-1"></a>
 <h1 class="chapter">1. Introduction</h1>
+<p>随着人工智能技术、高性能计算应用越来越广泛，与之关系密切的异构计算平台也越来越普及。
+目前比较流行的两大计算平台分别是 OpenCL 和 CUDA。
+如果想学习这方面的技术，购买 GPU 是一条常见的路径。本文会提供一些相对低成本一点的方法。
+目前几乎稍微主流一点的 intel 处理器，都会有集成显卡，因此我们会介绍OpenCL在intel集成显卡上环境搭建的方法。
+Nvidia 的显卡一般都很贵，但是很多平台提供了免费平台可以使用 Nvidia 的显卡，我们会以百度的飞桨平台为例做介绍。
+</p>
+<hr size="6">
+<a name="OpenCL-setup-on-Intel-Integrated-GPU"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Introduction" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#CUDA-free-platform-Introduction" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Introduction" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#CUDA-free-platform-Introduction" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="OpenCL-setup-on-Intel-Integrated-GPU-1"></a>
+<h1 class="chapter">2. OpenCL setup on Intel Integrated GPU</h1>
 
-
-
-
-
+<hr size="6">
+<a name="CUDA-free-platform-Introduction"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#OpenCL-setup-on-Intel-Integrated-GPU" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#OpenCL-setup-on-Intel-Integrated-GPU" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="CUDA-free-platform-Introduction-1"></a>
+<h1 class="chapter">3. CUDA free platform Introduction</h1>
 
 <hr size="6">
 <a name="SEC_Contents"></a>
@@ -104,6 +150,8 @@ ul.toc {list-style: none}
 
 <ul class="toc">
   <li><a name="toc-Introduction-1" href="#Introduction">1. Introduction</a></li>
+  <li><a name="toc-OpenCL-setup-on-Intel-Integrated-GPU-1" href="#OpenCL-setup-on-Intel-Integrated-GPU">2. OpenCL setup on Intel Integrated GPU</a></li>
+  <li><a name="toc-CUDA-free-platform-Introduction-1" href="#CUDA-free-platform-Introduction">3. CUDA free platform Introduction</a></li>
 </ul>
 </div>
 <hr size="1">

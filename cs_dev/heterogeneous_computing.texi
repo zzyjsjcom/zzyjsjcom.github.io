@@ -41,15 +41,23 @@ Published by
 
 @menu
 * Introduction::
+* OpenCL setup on Intel Integrated GPU::
+* CUDA free platform Introduction::
 @c * Copying::  free time team
 @end menu
 
 @node Introduction
 @chapter Introduction
+随着人工智能技术、高性能计算应用越来越广泛，与之关系密切的异构计算平台也越来越普及。
+目前比较流行的两大计算平台分别是 OpenCL 和 CUDA。
+如果想学习这方面的技术，购买 GPU 是一条常见的路径。本文会提供一些相对低成本一点的方法。
+目前几乎稍微主流一点的 intel 处理器，都会有集成显卡，因此我们会介绍OpenCL在intel集成显卡上环境搭建的方法。
+Nvidia 的显卡一般都很贵，但是很多平台提供了免费平台可以使用 Nvidia 的显卡，我们会以百度的飞桨平台为例做介绍。
 
+@node OpenCL setup on Intel Integrated GPU
+@chapter OpenCL setup on Intel Integrated GPU
 
-
-
-
+@node CUDA free platform Introduction
+@chapter CUDA free platform Introduction
 
 @bye
