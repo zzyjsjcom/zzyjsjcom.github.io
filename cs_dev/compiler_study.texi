@@ -133,6 +133,7 @@ ninja install
 @end example
 
 @node llvm tutorial
+@chapter llvm tutorial
 这部分内容来自 LLVM 的官方文档，如下：
 @example
 https://llvm.org/docs/tutorial/index.html
@@ -164,6 +165,5 @@ entry:
 
 ready>
 @end example
-@chapter llvm tutorial
 
 @bye
