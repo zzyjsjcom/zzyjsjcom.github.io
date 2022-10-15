@@ -7,7 +7,7 @@ Copyright C years free time team.
 Permission is granted to
 
  -->
-<!-- Created on September 3, 2022 by texi2html 1.82
+<!-- Created on October 16, 2022 by texi2html 1.82
 texi2html was written by: 
             Lionel Cons <Lionel.Cons@cern.ch> (original author)
             Karl Berry  <karl@freefriends.org>
@@ -64,6 +64,10 @@ ul.toc {list-style: none}
 <tr><td align="left" valign="top"><a href="#mini_005fc">1. mini_c</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top"><a href="#llvm_005fessential-code">2. llvm_essential code</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#build-from-llvm-source-code">3. build from llvm source code</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#llvm-tutorial">4. llvm tutorial</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
 
@@ -133,11 +137,11 @@ The result is 5050
 <a name="llvm_005fessential-code"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#mini_005fc" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#mini_005fc" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
-<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Next chapter"> &gt;&gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left"> &nbsp; </td>
@@ -166,6 +170,99 @@ The result is 5050
 这些都是很短小的代码，非常便于初学，前三章学完了，就可以到 llvm 官网跑更大型一点的例子了。
 </p>
 <hr size="6">
+<a name="build-from-llvm-source-code"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#llvm_005fessential-code" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#llvm_005fessential-code" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="build-from-llvm-source-code-1"></a>
+<h1 class="chapter">3. build from llvm source code</h1>
+
+<p>以 llvm 12.0.1 为例，通过如下命令源码编译 llvm，注意请将下面命令中的 /path/to/you 改成你自己的安装路径名。
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">sudo apt-get install -y gcc g++ git cmake ninja-build
+git clone https://github.com/llvm/llvm-project.git
+
+# CMAKE_BUILD_TYPE=DEBUG
+cd llvm-project
+git checkout -b llvmorg-12.0.1 llvmorg-12.0.1
+mkdir build
+cd build
+
+cmake -G Ninja -DCMAKE_BUILD_TYPE=RELEASE -DLLVM_TARGETS_TO_BUILD=&quot;X86&quot; -DLLVM_ENABLE_PROJECTS=&quot;clang&quot; \
+        -DCMAKE_INSTALL_PREFIX=/path/to/you ../llvm
+
+ninja # -j2
+# ninja check-all
+ninja install
+</pre></td></tr></table>
+
+
+<hr size="6">
+<a name="llvm-tutorial"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>这部分内容来自 LLVM 的官方文档，如下：
+</p><table><tr><td>&nbsp;</td><td><pre class="example">https://llvm.org/docs/tutorial/index.html
+</pre></td></tr></table>
+
+
+<p>这些代码都来自于 LLVM 源代码仓，跟 LLVM 的版本号有很大的关系，如果版本不匹配很可能会编译或者运行出错。
+这里还是以llvm 12.0.1 为例，首先通过上一节的内容源码编译 llvm 12.0.1，然后通过如下命令下载代码。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">git clone https://gitee.com/zzyjsjcom/compiler_study.git
+</pre></td></tr></table>
+
+
+<p>下面以 Chapter4 为例，介绍编译和运行的方法，首先切换到对应的目录。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">cd compiler_study/04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/Chapter4
+</pre></td></tr></table>
+
+
+<p>修改Makefile文件，把环境变量 LLVM_BIN 的值修改成你的 LLVM12 编译器所在的目录。执行make命令就可以生成可执行文件toy 了。
+</p>
+<p>运行，然后做一些简单的测试，如下：
+</p><table><tr><td>&nbsp;</td><td><pre class="example">$ ./toy
+ready&gt; def test(x) (1+2+x)*(x+(1+2));
+ready&gt; Read function definition:define double @test(double %x) {
+entry:
+  %addtmp = fadd double %x, 3.000000e+00
+  %multmp = fmul double %addtmp, %addtmp
+  ret double %multmp
+}
+
+ready&gt;
+</pre></td></tr></table>
+
+<a name="llvm-tutorial-1"></a>
+<h1 class="chapter">4. llvm tutorial</h1>
+
+<hr size="6">
 <a name="SEC_Contents"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
@@ -179,6 +276,8 @@ The result is 5050
 <ul class="toc">
   <li><a name="toc-mini_005fc-1" href="#mini_005fc">1. mini_c</a></li>
   <li><a name="toc-llvm_005fessential-code-1" href="#llvm_005fessential-code">2. llvm_essential code</a></li>
+  <li><a name="toc-build-from-llvm-source-code-1" href="#build-from-llvm-source-code">3. build from llvm source code</a></li>
+  <li><a name="toc-llvm-tutorial-1" href="#llvm-tutorial">4. llvm tutorial</a></li>
 </ul>
 </div>
 <hr size="1">
@@ -191,7 +290,7 @@ The result is 5050
 </tr></table>
 <h1>About This Document</h1>
 <p>
-  This document was generated by <em>zzy</em> on <em>September 3, 2022</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+  This document was generated by <em>zzy</em> on <em>October 16, 2022</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
 </p>
 <p>
   The buttons in the navigation panels have the following meaning:
@@ -293,7 +392,7 @@ The result is 5050
 <hr size="1">
 <p>
  <font size="-1">
-  This document was generated by <em>zzy</em> on <em>September 3, 2022</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
+  This document was generated by <em>zzy</em> on <em>October 16, 2022</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.82</em></a>.
  </font>
  <br>
 

@@ -43,6 +43,8 @@ This manual is for program, version version.
 @menu
 * mini_c::
 * llvm_essential code::
+* build from llvm source code::
+* llvm tutorial::
 @c * Copying::  free time team
 @end menu
 
@@ -106,5 +108,62 @@ git clone https://gitee.com/zzyjsjcom/computer_dev
 切换到目录：llvm_essentials_code，其中子目录 c1 代表第一章的代码，c2代表第二章的代码，依此类推。
 目前 c1 ~ c3 的代码，都已经调试通过，直接切换到对应的目录，执行 make，就可以编译了。
 这些都是很短小的代码，非常便于初学，前三章学完了，就可以到 llvm 官网跑更大型一点的例子了。
+
+@node build from llvm source code
+@chapter build from llvm source code
+
+以 llvm 12.0.1 为例，通过如下命令源码编译 llvm，注意请将下面命令中的 /path/to/you 改成你自己的安装路径名。
+
+@example
+sudo apt-get install -y gcc g++ git cmake ninja-build
+git clone https://github.com/llvm/llvm-project.git
+
+# CMAKE_BUILD_TYPE=DEBUG
+cd llvm-project
+git checkout -b llvmorg-12.0.1 llvmorg-12.0.1
+mkdir build
+cd build
+
+cmake -G Ninja -DCMAKE_BUILD_TYPE=RELEASE -DLLVM_TARGETS_TO_BUILD="X86" -DLLVM_ENABLE_PROJECTS="clang" \
+        -DCMAKE_INSTALL_PREFIX=/path/to/you ../llvm
+
+ninja # -j2
+# ninja check-all
+ninja install
+@end example
+
+@node llvm tutorial
+这部分内容来自 LLVM 的官方文档，如下：
+@example
+https://llvm.org/docs/tutorial/index.html
+@end example
+
+这些代码都来自于 LLVM 源代码仓，跟 LLVM 的版本号有很大的关系，如果版本不匹配很可能会编译或者运行出错。
+这里还是以llvm 12.0.1 为例，首先通过上一节的内容源码编译 llvm 12.0.1，然后通过如下命令下载代码。
+@example
+git clone https://gitee.com/zzyjsjcom/compiler_study.git
+@end example
+
+下面以 Chapter4 为例，介绍编译和运行的方法，首先切换到对应的目录。
+@example
+cd compiler_study/04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/Chapter4
+@end example
+
+修改Makefile文件，把环境变量 LLVM_BIN 的值修改成你的 LLVM12 编译器所在的目录。执行make命令就可以生成可执行文件toy 了。
+
+运行，然后做一些简单的测试，如下：
+@example
+$ ./toy
+ready> def test(x) (1+2+x)*(x+(1+2));
+ready> Read function definition:define double @@test(double %x) @{
+entry:
+  %addtmp = fadd double %x, 3.000000e+00
+  %multmp = fmul double %addtmp, %addtmp
+  ret double %multmp
+@}
+
+ready>
+@end example
+@chapter llvm tutorial
 
 @bye
