@@ -58,7 +58,7 @@ mini_c 是一个玩具编译器，它由5000行左右的C语言代码实现，�
 
 代码仓可以用以下命令clone下来:
 @example
-git clone https://gitee.com/zzyjsjcom/computer_dev
+git clone @url{https://gitee.com/zzyjsjcom/computer_dev}
 @end example
 
 进入子目录 mini_c 就可以看到源代码了。
@@ -103,7 +103,7 @@ sudo apt-get install clang-6
 
 首先使用以下命令 clone 代码仓:
 @example
-git clone https://gitee.com/zzyjsjcom/computer_dev
+git clone @url{https://gitee.com/zzyjsjcom/computer_dev}
 @end example
 切换到目录：llvm_essentials_code，其中子目录 c1 代表第一章的代码，c2代表第二章的代码，依此类推。
 目前 c1 ~ c3 的代码，都已经调试通过，直接切换到对应的目录，执行 make，就可以编译了。
@@ -116,7 +116,7 @@ git clone https://gitee.com/zzyjsjcom/computer_dev
 
 @example
 sudo apt-get install -y gcc g++ git cmake ninja-build
-git clone https://github.com/llvm/llvm-project.git
+git clone @url{https://github.com/llvm/llvm-project.git}
 
 # CMAKE_BUILD_TYPE=DEBUG
 cd llvm-project
@@ -148,13 +148,13 @@ ninja install
 
 这部分内容来自 LLVM 的官方文档，如下：
 @example
-https://llvm.org/docs/tutorial/index.html
+@url{https://llvm.org/docs/tutorial/index.html}
 @end example
 
 这些代码都来自于 LLVM 源代码仓，跟 LLVM 的版本号有很大的关系，如果版本不匹配很可能会编译或者运行出错。
 这里还是以llvm 12.0.1 为例，首先通过上一节的内容源码编译 llvm 12.0.1，然后通过如下命令下载代码。
 @example
-git clone https://gitee.com/zzyjsjcom/compiler_study.git
+git clone @url{https://gitee.com/zzyjsjcom/compiler_study.git}
 @end example
 
 下面以 Chapter4 为例，介绍编译和运行的方法，首先切换到对应的目录。
@@ -185,7 +185,7 @@ ready>
 
 这部分内容以 Chpater1 为例做演示，通过以下命令 clone 代码。
 @example
-git clone https://gitee.com/zzyjsjcom/compiler_study.git
+git clone @url{https://gitee.com/zzyjsjcom/compiler_study.git}
 @end example
 
 通过如下命令进入 Chpater1。
