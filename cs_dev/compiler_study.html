@@ -214,7 +214,7 @@ ninja install
 <a name="llvm-tutorial"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Previous section in reading order"> &lt; </a>]</td>
-<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left">[<a href="#Kaleidoscope-_002d-a-toy-compiler" title="Next section in reading order"> &gt; </a>]</td>
 <td valign="middle" align="left"> &nbsp; </td>
 <td valign="middle" align="left">[<a href="#build-from-llvm-source-code" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
 <td valign="middle" align="left">[<a href="#Top" title="Up section"> Up </a>]</td>
@@ -230,6 +230,36 @@ ninja install
 </tr></table>
 <a name="llvm-tutorial-1"></a>
 <h1 class="chapter">4. llvm tutorial</h1>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#Kaleidoscope-_002d-a-toy-compiler">4.1 Kaleidoscope - a toy compiler</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#Building-A-JIT">4.2 Building A JIT</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Kaleidoscope-_002d-a-toy-compiler"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#llvm-tutorial" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#Building-A-JIT" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Kaleidoscope-_002d-a-toy-compiler-1"></a>
+<h2 class="section">4.1 Kaleidoscope - a toy compiler</h2>
+
 <p>这部分内容来自 LLVM 的官方文档，如下：
 </p><table><tr><td>&nbsp;</td><td><pre class="example">https://llvm.org/docs/tutorial/index.html
 </pre></td></tr></table>
@@ -263,6 +293,50 @@ ready&gt;
 
 
 <hr size="6">
+<a name="Building-A-JIT"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="#Kaleidoscope-_002d-a-toy-compiler" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="#llvm-tutorial" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<a name="Building-A-JIT-1"></a>
+<h2 class="section">4.2 Building A JIT</h2>
+
+<p>这部分内容以 Chpater1 为例做演示，通过如下命令进入 Chpater1。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/BuildingAJIT/Chapter1
+</pre></td></tr></table>
+
+
+<p>运行 toy compiler。
+</p><table><tr><td>&nbsp;</td><td><pre class="example">$ ./toy
+ready&gt; def testfunc(x y) x + y*2;
+ready&gt; Read function definition:define double @testfunc(double %x, double %y) {
+entry:
+  %y2 = alloca double, align 8
+  %x1 = alloca double, align 8
+  store double %x, double* %x1, align 8
+  store double %y, double* %y2, align 8
+  %x3 = load double, double* %x1, align 8
+  %y4 = load double, double* %y2, align 8
+  %multmp = fmul double %y4, 2.000000e+00
+  %addtmp = fadd double %x3, %multmp
+  ret double %addtmp
+}
+</pre></td></tr></table>
+
+
+<hr size="6">
 <a name="SEC_Contents"></a>
 <table cellpadding="1" cellspacing="1" border="0">
 <tr><td valign="middle" align="left">[<a href="#Top" title="Cover (top) of document">Top</a>]</td>
@@ -277,7 +351,12 @@ ready&gt;
   <li><a name="toc-mini_005fc-1" href="#mini_005fc">1. mini_c</a></li>
   <li><a name="toc-llvm_005fessential-code-1" href="#llvm_005fessential-code">2. llvm_essential code</a></li>
   <li><a name="toc-build-from-llvm-source-code-1" href="#build-from-llvm-source-code">3. build from llvm source code</a></li>
-  <li><a name="toc-llvm-tutorial-1" href="#llvm-tutorial">4. llvm tutorial</a></li>
+  <li><a name="toc-llvm-tutorial-1" href="#llvm-tutorial">4. llvm tutorial</a>
+  <ul class="toc">
+    <li><a name="toc-Kaleidoscope-_002d-a-toy-compiler-1" href="#Kaleidoscope-_002d-a-toy-compiler">4.1 Kaleidoscope - a toy compiler</a></li>
+    <li><a name="toc-Building-A-JIT-1" href="#Building-A-JIT">4.2 Building A JIT</a></li>
+  </ul>
+</li>
 </ul>
 </div>
 <hr size="1">

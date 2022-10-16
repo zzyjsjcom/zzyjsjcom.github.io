@@ -134,6 +134,18 @@ ninja install
 
 @node llvm tutorial
 @chapter llvm tutorial
+
+@menu
+* Kaleidoscope - a toy compiler::
+* Building A JIT::
+@c * Copying::  free time team
+@end menu
+
+@node Kaleidoscope - a toy compiler
+@section Kaleidoscope - a toy compiler
+@c @node Kaleidoscope - a toy compiler
+@c @chapter Kaleidoscope - a toy compiler
+
 这部分内容来自 LLVM 的官方文档，如下：
 @example
 https://llvm.org/docs/tutorial/index.html
@@ -164,6 +176,34 @@ entry:
 @}
 
 ready>
+@end example
+
+@node Building A JIT
+@section Building A JIT
+@c @node Building A JIT
+@c @chapter Building A JIT
+
+这部分内容以 Chpater1 为例做演示，通过如下命令进入 Chpater1。
+@example
+04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/BuildingAJIT/Chapter1
+@end example
+
+运行 toy compiler。
+@example
+$ ./toy
+ready> def testfunc(x y) x + y*2;
+ready> Read function definition:define double @@testfunc(double %x, double %y) @{
+entry:
+  %y2 = alloca double, align 8
+  %x1 = alloca double, align 8
+  store double %x, double* %x1, align 8
+  store double %y, double* %y2, align 8
+  %x3 = load double, double* %x1, align 8
+  %y4 = load double, double* %y2, align 8
+  %multmp = fmul double %y4, 2.000000e+00
+  %addtmp = fadd double %x3, %multmp
+  ret double %addtmp
+@}
 @end example
 
 @bye
