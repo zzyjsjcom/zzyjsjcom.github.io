@@ -183,9 +183,14 @@ ready>
 @c @node Building A JIT
 @c @chapter Building A JIT
 
-这部分内容以 Chpater1 为例做演示，通过如下命令进入 Chpater1。
+这部分内容以 Chpater1 为例做演示，通过以下命令 clone 代码。
 @example
-04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/BuildingAJIT/Chapter1
+git clone https://gitee.com/zzyjsjcom/compiler_study.git
+@end example
+
+通过如下命令进入 Chpater1。
+@example
+cd compiler_study/04_llvm_tutorial/kaleidoscope/Kaleidoscope_12.0.1/BuildingAJIT/Chapter1
 @end example
 
 运行 toy compiler。
